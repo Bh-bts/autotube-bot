@@ -1,6 +1,9 @@
 name: YouTube Test
 
 on:
+  push:
+    branches:
+      - master
   schedule:
     - cron: '30 0 * * *'
 
