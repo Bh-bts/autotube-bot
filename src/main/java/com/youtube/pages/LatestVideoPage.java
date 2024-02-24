@@ -9,6 +9,8 @@ import com.youtube.util.PropertiesUtils;
 
 /**
  * Represents the page object model for the latest video page.
+ *
+ * @author Bhavin.Thumar
  */
 public class LatestVideoPage extends Browsers {
 

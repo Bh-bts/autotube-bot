@@ -11,6 +11,8 @@ import com.youtube.util.PropertiesUtils;
 
 /**
  * Test case class for executing the trending video functionality.
+ *
+ * @author Bhavin.Thumar
  */
 public class TrendingVideo extends Browsers {
 

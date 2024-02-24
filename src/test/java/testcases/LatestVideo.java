@@ -11,6 +11,8 @@ import com.youtube.util.PropertiesUtils;
 
 /**
  * Test case class for executing the latest video functionality.
+ *
+ * @author Bhavin.Thumar
  */
 public class LatestVideo extends Browsers {
 

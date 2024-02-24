@@ -8,6 +8,8 @@ import com.youtube.helpers.ActionHelpers;
 /**
  * Represents the page object model for the trending video page. Extends the
  * LatestVideoPage class.
+ *
+ * @author Bhavin.Thumar
  */
 public class TrendingVideoPage extends LatestVideoPage {
 

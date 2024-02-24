@@ -12,6 +12,8 @@ import com.youtube.browsers.Browsers;
 /**
  * Helper class providing methods for interacting with web elements and
  * JavaScript actions.
+ *
+ * @author Bhavin.Thumar
  */
 public class ActionHelpers extends Browsers {
 
