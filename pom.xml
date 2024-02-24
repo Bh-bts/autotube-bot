@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>Project</groupId>
-	<artifactId>Autotube_bot</artifactId>
+	<artifactId>autotube-bot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>Autotube_bot</name>
+	<name>autotube-bot</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -40,7 +40,7 @@
 				<configuration>
 					<!-- Configure Fork Count for Parallel Execution -->
 					<forkCount>2</forkCount> <!-- Set the desired fork count -->
-					<reuseForks>false</reuseForks> <!-- Set to false if you want
+					<reuseForks>true</reuseForks> <!-- Set to false if you want
 					separate JVMs for each test class -->
 				</configuration>
 			</plugin>
