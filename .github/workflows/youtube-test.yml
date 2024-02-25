@@ -1,36 +1,48 @@
 name: YouTube Test
 
+# Triggers define when the workflow should run
 on:
+  # Trigger the workflow when code is pushed to the master branch
   push:
     branches:
       - master
+    # Schedule the workflow to run daily at 00:30 AM UTC
   schedule:
     - cron: '30 0 * * *'
+      # Allow manual execution of the workflow from the GitHub Actions tab
+  workflow_dispatch:
 
+# Define the jobs that should run when the workflow is triggered
 jobs:
- build:
-
+  # Define a job named 'build' that runs on an Ubuntu environment
+  build:
     runs-on: ubuntu-latest
 
     steps:
+      # Check out the code repository
       - uses: actions/checkout@v2
+      # Set up Java 11 using Temurin distribution
       - uses: actions/setup-java@v2
         with:
           distribution: temurin
           java-version: 11
 
+      # Set up Maven with Java 11 and Temurin distribution
       - name: Set up Maven
         uses: actions/setup-java@v2
         with:
           distribution: temurin
           java-version: 11
 
+      # Compile the project using Maven
       - name: Compile Project
         run: mvn clean compile
 
+      # Run tests using Maven
       - name: Run Tests
         run: mvn test -Dtest="testcases.**"
 
+      # Generate test reports using Maven's surefire-report plugin
       - name: Generate Test Report
         run: |
           mvn surefire-report:report-only

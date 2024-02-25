@@ -1,70 +1,74 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>Project</groupId>
-	<artifactId>autotube-bot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>Project</groupId>
+    <artifactId>autotube-bot</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
 
-	<name>autotube-bot</name>
-	<url>http://maven.apache.org</url>
+    <name>autotube-bot</name>
+    <url>http://maven.apache.org</url>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <selenium.version>4.17.0</selenium.version>
+        <testng.version>7.8.0</testng.version>
+        <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-surefire-report-plugin.version>3.2.5</maven-surefire-report-plugin.version>
+    </properties>
 
-	</properties>
+    <dependencies>
+        <!--
+        https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-	<dependencies>
-		<!--
-		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>4.17.0</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>7.8.0</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.2.5</version>
-				<configuration>
-					<!-- Configure Fork Count for Parallel Execution -->
-					<forkCount>2</forkCount> <!-- Set the desired fork count -->
-					<reuseForks>true</reuseForks> <!-- Set to false if you want
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <!-- Configure Fork Count for Parallel Execution -->
+                    <forkCount>2</forkCount> <!-- Set the desired fork count -->
+                    <reuseForks>true</reuseForks> <!-- Set to false if you want
 					separate JVMs for each test class -->
-				</configuration>
-			</plugin>
+                </configuration>
+            </plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-				<configuration>
-					<source>11</source>
-					<target>11</target>
-				</configuration>
-			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
 
-		</plugins>
-	</build>
+        </plugins>
+    </build>
 
-	<reporting>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>3.2.5</version>
-			</plugin>
-		</plugins>
-	</reporting>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>${maven-surefire-report-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>
