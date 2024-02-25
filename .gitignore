@@ -11,3 +11,6 @@ target/
 # Ignore test output directories
 test-output/
 testrunner/
+
+# Ignore the media directory which is used in README.md file
+media/
