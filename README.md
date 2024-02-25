@@ -1,10 +1,10 @@
-# YouTube Automation <img src="https://bh-bts.github.io/media/youtube-logo.png" alt="YouTube" width="50" height="50" style="vertical-align: middle;">
+# YouTube Automation <img align="center" src="https://bh-bts.github.io/media/youtube-logo.png" alt="YouTube" width="50" height="50">
 This Repository contains the Automation testcases for YouTube.
 
 ---
-## Run YouTube Test using GitHub Actions <img src="https://bh-bts.github.io/media/github-actions-logo.png" alt="GitHub Actions" width="30" height="30" style="vertical-align: middle;">
+## Run YouTube Test using GitHub Actions <img align="center" src="https://bh-bts.github.io/media/github-actions-logo.png" alt="GitHub Actions" width="30" height="30">
 
-### Test Execution <img src="https://bh-bts.github.io/media/test-execution-logo.png" alt="Test Execution" width="30" height="30" style="vertical-align: middle;">
+### Test Execution <img align="center" src="https://bh-bts.github.io/media/test-execution-logo.png" alt="Test Execution" width="30" height="30">
 
 To execute YouTube tests using GitHub Actions, follow these steps:
 
@@ -26,13 +26,13 @@ To execute YouTube tests using GitHub Actions, follow these steps:
 
 `mvn clean compile`
 
-### Running Test <img src="https://bh-bts.github.io/media/running-test-logo.png" alt="Running test" width="25" height="25" style="vertical-align: middle;">
+### Running Test <img align="center" src="https://bh-bts.github.io/media/running-test-logo.png" alt="Running test" width="25" height="25">
 
 This command run the test in parallel mode
 
 `mvn test -Dtest="testcases.**`
 
-### Test Report <img src="https://bh-bts.github.io/media/test-report-logo.png" alt="Test Report" width="30" height="30" style="vertical-align: middle;">
+### Test Report <img align="center" src="https://bh-bts.github.io/media/test-report-logo.png" alt="Test Report" width="30" height="30">
 
 After the tests, You can generate a report using
 
