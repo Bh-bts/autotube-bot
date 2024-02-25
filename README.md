@@ -20,7 +20,7 @@ To execute YouTube tests using GitHub Actions, follow these steps:
 ### Installation
 
 1. Install java 8 jdk : I use java 11: https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html ( need free account )
-2. Download Maven : https://maven.apache.org/install.html
+2. Download Maven: https://maven.apache.org/install.html
 3. clone autotube-bot repository
 4. Run this command in project folder :
 
@@ -34,7 +34,7 @@ This command run the test in parallel mode
 
 ### Test Report <img src="https://bh-bts.github.io/media/test-report-logo.png" alt="Test Report" width="30" height="30" style="vertical-align: middle;">
 
-After the tests, you can generate a report using
+After the tests, You can generate a report using
 
 `mvn surefire-report:report-only`
 
