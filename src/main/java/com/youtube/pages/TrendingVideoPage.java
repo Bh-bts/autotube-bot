@@ -15,7 +15,6 @@ public class TrendingVideoPage extends LatestVideoPage {
 
 	@FindBy(xpath = "//yt-formatted-string[text()='Trending']/ancestor::tp-yt-paper-item")
 	WebElement trending_btn;
-
 	@FindBy(xpath = "//ytd-item-section-renderer[1]//ytd-video-renderer[1]//a[@id='video-title']")
 	WebElement video_link;
 
