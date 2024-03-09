@@ -3,7 +3,6 @@ package com.youtube.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.youtube.browsers.Browsers;
 import com.youtube.helpers.ActionHelpers;
 import com.youtube.util.PropertiesUtils;
 
@@ -12,7 +11,12 @@ import com.youtube.util.PropertiesUtils;
  *
  * @author Bhavin.Thumar
  */
-public class LatestVideoPage extends Browsers {
+public class LatestVideoPage {
+
+	public static final String ANSI_RESET = "\u001B[0m";
+	public static final String ANSI_YELLOW = "\u001B[33m";
+	public static final String ANSI_BLUE = "\u001B[34m";
+	public static final String ANSI_GREEN = "\u001B[32m";
 
 	@FindBy(xpath = "//ytd-two-column-browse-results-renderer[@page-subtype='channels']//ytd-rich-grid-row[@class='style-scope ytd-rich-grid-renderer'][1]//ytd-rich-item-renderer[1]//a[@id='video-title-link']")
 	WebElement firstVideo;

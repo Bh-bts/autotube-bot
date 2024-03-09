@@ -11,12 +11,27 @@ import com.youtube.helpers.ActionHelpers;
  *
  * @author Bhavin.Thumar
  */
-public class TrendingVideoPage extends LatestVideoPage {
+public class TrendingVideoPage {
+
+	public static final String ANSI_RESET = "\u001B[0m";
+	public static final String ANSI_YELLOW = "\u001B[33m";
+	public static final String ANSI_BLUE = "\u001B[34m";
+	public static final String ANSI_GREEN = "\u001B[32m";
 
 	@FindBy(xpath = "//yt-formatted-string[text()='Trending']/ancestor::tp-yt-paper-item")
 	WebElement trending_btn;
 	@FindBy(xpath = "//ytd-item-section-renderer[1]//ytd-video-renderer[1]//a[@id='video-title']")
 	WebElement video_link;
+	@FindBy(xpath = "//button[@data-title-no-tooltip='Pause']")
+	WebElement resumeVideo;
+	@FindBy(xpath = "//div[@id='title']/h1/yt-formatted-string")
+	WebElement getTitle;
+	@FindBy(xpath = "//yt-formatted-string[@id='info']/span[3]")
+	WebElement getTime;
+	@FindBy(xpath = "//div[@id='description-inner']//tp-yt-paper-button[@id='expand']")
+	WebElement showMore_btn;
+	@FindBy(xpath = "//yt-formatted-string[@id='info']/span[1]")
+	WebElement views;
 
 	/**
 	 * Opens the trending video and retrieves its details.
