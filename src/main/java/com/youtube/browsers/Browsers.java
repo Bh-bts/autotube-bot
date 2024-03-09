@@ -11,7 +11,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 import com.youtube.enums.BrowserTypes;
-import com.youtube.util.PropertiesUtils;
 
 /**
  * This class manages the creation and configuration of WebDriver instances for
@@ -19,15 +18,9 @@ import com.youtube.util.PropertiesUtils;
  * 
  * @author Bhavin.Thumar
  */
-public class Browsers extends PropertiesUtils {
+public class Browsers  {
 	
 	public static WebDriver driver;
-
-	/** ANSI color codes for console output */
-	public static final String ANSI_RESET = "\u001B[0m";
-	public static final String ANSI_YELLOW = "\u001B[33m";
-	public static final String ANSI_BLUE = "\u001B[34m";
-	public static final String ANSI_GREEN = "\u001B[32m";
 
 	/**
 	 * Starts a browser session based on the provided browser type, URL, and
