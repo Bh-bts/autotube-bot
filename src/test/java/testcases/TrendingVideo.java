@@ -1,5 +1,6 @@
 package testcases;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -14,9 +15,9 @@ import com.youtube.util.PropertiesUtils;
  *
  * @author Bhavin.Thumar
  */
-public class TrendingVideo extends Browsers {
+public class TrendingVideo  {
 
-	Browsers browsers;
+	private WebDriver driver;
 
 	/**
 	 * Sets up the test environment before executing the test case. It initializes
@@ -25,7 +26,7 @@ public class TrendingVideo extends Browsers {
 	 */
 	@BeforeTest
 	public void setUp() {
-		browsers = new Browsers();
+		Browsers browsers = new Browsers();
 		driver = browsers.startBrowser(BrowserTypes.CHROME, PropertiesUtils.getURL(),
 				PropertiesUtils.getHeadlessMode());
 	}
