@@ -30,7 +30,7 @@ To execute YouTube tests using GitHub Actions, follow these steps:
 
 This command run the test in parallel mode
 
-`mvn test -Dtest="testcases.**`
+`mvn test -Dtest="testcases.**"`
 
 ### Test Report <img align="center" src="https://bh-bts.github.io/media/test-report-logo.png" alt="Test Report" width="30" height="30">
 

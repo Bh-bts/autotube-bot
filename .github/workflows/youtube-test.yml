@@ -51,6 +51,36 @@ jobs:
       # Upload test report in GitHub
       - name: Upload Test Report Artifact
         uses: actions/upload-artifact@v2
+        if: ${{ always() }}
         with:
           name: test-report
           path: target/site
+          if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to warn
+
+      - name: Parse Surefire Report
+        id: parse-surefire-report
+        run: |
+          test_count=$(grep -oP '(?<=<td align="left">)\d+(?=<\/td>)' ./target/site/surefire-report.html | head -1)
+          error_count=$(grep -oP '(?<=<td>)[0-9]+(?=<\/td>)' ./target/site/surefire-report.html | sed -n '2p')
+          failure_count=$(grep -oP '(?<=<td>)[0-9]+(?=<\/td>)' ./target/site/surefire-report.html | sed -n '3p')
+          skipped_count=$(grep -oP '(?<=<td>)[0-9]+(?=<\/td>)' ./target/site/surefire-report.html | sed -n '5p')
+          success_rate=$(grep -oP '(?<=<td>)[0-9]+%<\/td>' ./target/site/surefire-report.html | tail -n 1 | grep -oP '[0-9]+%')
+          
+          echo "::set-output name=test_count::$test_count"
+          echo "::set-output name=error_count::$error_count"
+          echo "::set-output name=failure_count::$failure_count"
+          echo "::set-output name=skipped_count::$skipped_count"
+          echo "::set-output name=success_rate::$success_rate"
+          
+      - name: Send Slack notification with Surefire report
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: |
+            Test count: ${{ steps.parse-surefire-report.outputs.test_count }}
+            Error count: ${{ steps.parse-surefire-report.outputs.error_count }}
+            Failure count: ${{ steps.parse-surefire-report.outputs.failure_count }}
+            Skipped count: ${{ steps.parse-surefire-report.outputs.skipped_count }}
+            Success rate: ${{ steps.parse-surefire-report.outputs.success_rate }}
