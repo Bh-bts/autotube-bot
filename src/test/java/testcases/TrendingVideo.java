@@ -37,7 +37,7 @@ public class TrendingVideo  {
 	 * to get the trending video.
 	 */
 	@Test
-	public void getTrendingVideo() {
+	public void getTrendingVideo() throws InterruptedException {
 		TrendingVideoPage obj = PageFactory.initElements(driver, TrendingVideoPage.class);
 		obj.trendingVideo();
 	}

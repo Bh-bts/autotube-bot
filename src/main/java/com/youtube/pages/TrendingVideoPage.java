@@ -36,8 +36,9 @@ public class TrendingVideoPage {
 	/**
 	 * Opens the trending video and retrieves its details.
 	 */
-	public void trendingVideo() {
+	public void trendingVideo() throws InterruptedException {
 		ActionHelpers.dynamicTimeOut(trending_btn).click();
+		Thread.sleep(5000);
 		ActionHelpers.dynamicTimeOut(video_link).click();
 		ActionHelpers.dynamicTimeOut(resumeVideo).click();
 

@@ -43,3 +43,7 @@ then
 `mvn site -DgenerateReports=false`
 
 After, go to `target/site/surefire-report.html` and you can see the report.
+
+### Test case
+1. Verify the Latest Video of Any YouTube Channel.
+2. Verify the Current Trending Video on YouTube.
