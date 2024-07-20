@@ -2,6 +2,7 @@ package com.youtube.helpers;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,6 +27,19 @@ public class ActionHelpers extends Browsers {
 	public static WebElement dynamicTimeOut(WebElement locator) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		return wait.until(ExpectedConditions.visibilityOf(locator));
+	}
+
+	public static void clickByXPath(String locator){
+		WebElement element = driver.findElement(By.cssSelector(locator));
+		element.click();
+	}
+
+	public static WebElement isElementVisible(WebElement locator){
+		if (locator.isDisplayed()){
+			return locator;
+		} else{
+			return null;
+		}
 	}
 
 	/**

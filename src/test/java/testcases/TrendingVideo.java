@@ -27,7 +27,7 @@ public class TrendingVideo  {
 	@BeforeTest
 	public void setUp() {
 		Browsers browsers = new Browsers();
-		driver = browsers.startBrowser(BrowserTypes.CHROME, PropertiesUtils.getURL(),
+		driver = browsers.startBrowser(BrowserTypes.FIREFOX, PropertiesUtils.getURL(),
 				PropertiesUtils.getHeadlessMode());
 	}
 

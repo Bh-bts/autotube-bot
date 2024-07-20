@@ -20,7 +20,7 @@ public class TrendingVideoPage {
 
 	@FindBy(xpath = "//yt-formatted-string[text()='Trending']/ancestor::tp-yt-paper-item")
 	WebElement trending_btn;
-	@FindBy(xpath = "//ytd-item-section-renderer[1]//ytd-video-renderer[1]//a[@id='video-title']")
+	@FindBy(css = "ytd-item-section-renderer:nth-child(1) ytd-video-renderer:nth-child(1)")
 	WebElement video_link;
 	@FindBy(xpath = "//button[@data-title-no-tooltip='Pause']")
 	WebElement resumeVideo;
@@ -38,8 +38,17 @@ public class TrendingVideoPage {
 	 */
 	public void trendingVideo() throws InterruptedException {
 		ActionHelpers.dynamicTimeOut(trending_btn).click();
-		Thread.sleep(5000);
-		ActionHelpers.dynamicTimeOut(video_link).click();
+		Thread.sleep(15000);
+
+//		if(ActionHelpers.isElementVisible(video_link) != null){
+//			ActionHelpers.dynamicTimeOut(video_link).click();
+//		} else {
+//			System.out.println("Element is not visible or not found.");
+//		}
+
+		ActionHelpers.clickByXPath("ytd-item-section-renderer:nth-child(1) ytd-video-renderer:nth-child(1)");
+
+		//ActionHelpers.dynamicTimeOut(video_link).click();
 		ActionHelpers.dynamicTimeOut(resumeVideo).click();
 
 		String title = getTitle.getText();
